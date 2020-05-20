@@ -28,9 +28,10 @@ class LogViewerController extends BaseController
     /**
      * LogViewerController constructor.
      */
-    public function __construct()
+      public function __construct()
     {
-        $this->log_viewer = new LaravelLogViewer();
+        $no= \Request::segment(3);
+        $this->log_viewer = new LaravelLogViewer($no);
         $this->request = app('request');
     }
 
