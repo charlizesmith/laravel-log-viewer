@@ -41,12 +41,12 @@ class LaravelLogViewer
     /**
      * LaravelLogViewer constructor.
      */
-   public function __construct($no)
+      public function __construct($no)
     {
         $this->level = new Level();
         $this->pattern = new Pattern();
 //        $this->storage_path = function_exists('config') ? config('logviewer.storage_path', storage_path('logs')) : storage_path('logs');
-        $this->storage_path =  str_replace('/','\\',config("logviewer.storage_path_$no"));
+        $this->storage_path = config("logviewer.storage_path_$no");
 
     }
 
